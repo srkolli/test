@@ -11,7 +11,7 @@
   - Tested on Suse/Ubuntu/RHEL 
 
 # Roles defined in this playbook 
-  - See: roles/tomcat8/tasks/main.yml
+  - See: roles/apache/tasks/main.yml
 
 # Steps to run the playbook
   - ansible-playbook -i hosts ror.yml
