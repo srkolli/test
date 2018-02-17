@@ -1,0 +1,6 @@
+---
+
+- hosts: ror
+ 
+  roles:
+   - apache 

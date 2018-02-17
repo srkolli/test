@@ -1,0 +1,4 @@
+---
+
+- name: Installing apache
+  zypper: name=apache state=present
