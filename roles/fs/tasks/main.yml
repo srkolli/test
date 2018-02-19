@@ -1,0 +1,22 @@
+---
+
+- name: Finding vg name
+  shell: vgs | grep -v rootvg | grep -v VG | awk '{print $1}'
+  register: vgname
+
+- name: Creating new LVM logical volume {{lvname}}
+  lvol: vg={{vgname.stdout}} lv={{lvname}} size={{lvsize}}
+    
+- name: creating new FS on new LV {{file_system}}
+  filesystem: fstype={{file_system}} dev=/dev/mapper/{{vgname.stdout}}-{{lvname}}
+  
+- name: Creates directory {{mount_point}}
+  file: path={{mount_point}} state=directory  
+
+- name: Mounting new filesystem {{mount_point}}
+  mount:
+    name: "{{mount_point}}"
+    src: /dev/{{vgname.stdout}}/{{lvname}}
+#   src=/dev/mapper/{{vgname.stdout}}-{{lvname}} same as above lines 
+    fstype: "{{file_system}}"
+    state: mounted

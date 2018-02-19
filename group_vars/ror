@@ -1,0 +1,20 @@
+
+username: capability-areas
+
+#Ruby_version: '2.3.3' 
+#Passenger_version: '5.1.2'
+#Rails_version: '4.2.8'
+
+#node_version: 6.10.3
+#node_archive_file: node-v{{node_version}}.tar.gz
+#node_download_url: https://nodejs.org/dist/v{{node_version}}/node-v{{node_version}}.tar.gz
+#node_extract_dir: node-v{{node_version}}
+
+app_name: nginx
+lvname: lv_{{app_name}}  
+lvsize: 1024
+file_system: xfs
+mount_point: /opt/{{app_name}}
+
+#ruby_version: '2.3.3' 
+#ginx_dir: /opt/nginx
