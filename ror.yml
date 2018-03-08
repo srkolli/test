@@ -3,5 +3,5 @@
 - hosts: ror
  
   roles:
- #  - apache 
-   - fs
+   - apache 
+ 

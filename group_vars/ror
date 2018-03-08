@@ -1,7 +1,2 @@
 
-app_name: nginx
-lvname: lv_{{app_name}}  
-lvsize: 1024
-file_system: xfs
-mount_point: /opt/{{app_name}}
 
